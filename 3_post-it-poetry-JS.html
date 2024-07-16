@@ -1,0 +1,48 @@
+<script type="text/javascript">
+  (function ($) {
+    $(document).ready(function () {
+      $("#writeablePoem textarea").on("keyup", function (event) {
+        var len = $(this).val().length;
+        if (len > 140) {
+          $(this)
+            .val($(this).val().slice(0, len))
+            .css("background-color", "#fdccd0");
+          $("#charNum")
+            .text("Description must be 140 characters or less.")
+            .css("color", "yellow");
+          $(".charRemaining")
+            .text(len - 140 + "" + " characters over limit")
+            .css("color", "yellow");
+          $(".charRemaining").css("display", "block");
+        } else {
+          $("#charNum")
+            .text(140 - len + "" + " characters remaining")
+            .css("color", "#fff");
+          $(".charRemaining").text("").css("display", "none");
+          $("#writeablePoem textarea").css("background-color", "#fff");
+        }
+      });
+      $("#clearwriteablePoem").click(function (e) {
+        e.preventDefault();
+        $("#charNum").text("140 characters remaining").css("color", "#fff");
+        $("#writeablePoem textarea").val("").css("background-color", "#fff");
+        $(".charRemaining").text("").css("display", "none");
+      });
+    });
+  })(jQuery);
+</script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    //For changing post-it color
+    var writeablePostIt = $("#writeablePoem");
+    $('div[id*="ncpcolor"] input').on("change", function () {
+      var $this = $(this);
+      var colorSelection = $this[0].value; //Gets selected color
+
+      writeablePostIt.attr(
+        "class",
+        "form-field form-field--inline stickie-note writable " + colorSelection
+      );
+    });
+  });
+</script>

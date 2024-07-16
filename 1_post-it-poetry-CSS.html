@@ -1,0 +1,273 @@
+<link
+  href="https://fonts.googleapis.com/css?family=Indie+Flower"
+  rel="stylesheet"
+/>
+<style type="text/css">
+  #hero {
+    background: #fff
+      url(/92StreetY/media/img/Misc/Hero/Post-it-Poetry-hero-inline.jpg);
+    background-position: center;
+    background-size: 90%;
+    background-repeat: no-repeat;
+  }
+
+  #about .page-intro {
+    font-size: 1.2rem;
+  }
+
+  #join {
+    background-color: #864886; /*8a3e8a*/
+    color: #fff;
+  }
+
+  #poetry-wall {
+    text-align: center;
+  }
+
+  #poetry-wall h1.ms-hero__title--med {
+    padding: 35px 0;
+  }
+
+  /*.stickie-note {
+    background: #FDFDAA;
+    position: relative;
+    display: block;
+    height: 200px;
+    width: 200px;
+    padding: 8px;
+    box-shadow: 2px 3px 6px rgba(0,0,0,.3), inset 0 0 24px rgba(0, 0, 0, .2);
+  }
+  */
+  #stickiesList {
+    padding-left: 0;
+  }
+
+  #stickiesList .stickie-note {
+    margin: 0 auto 2em;
+  }
+
+  .stickie-note.writable {
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15),
+      2px 2px 0 rgba(255, 255, 255, 0.4), 3px 3px 0 rgba(0, 0, 0, 0.2),
+      4px 4px 0 rgba(255, 255, 255, 0.4), 5px 5px 0 rgba(0, 0, 0, 0.225),
+      6px 6px 0 rgba(255, 255, 255, 0.4), 7px 7px 0 rgba(0, 0, 0, 0.25),
+      9px 15px 15px rgba(0, 0, 0, 0.4), inset 0 0 24px rgba(0, 0, 0, 0.2);
+    position: unset;
+    margin-bottom: 2em;
+  }
+
+  #poem-form {
+    text-align: left;
+    /*max-width: 250px;*/
+    /*margin: auto;*/
+    margin: 2.5em auto 1em;
+  }
+
+  #poem-form label {
+    display: unset;
+  }
+
+  #writeablePoem textarea {
+    font-size: 1em;
+    line-height: 1.5;
+    border-width: 0;
+    width: 200px;
+    height: 200px;
+    resize: none;
+    padding: 6px;
+    background-color: transparent !important;
+    font-family: "Indie Flower", cursive;
+  }
+
+  .stickie-note:not(.writable):before,
+  .stickie-note:not(.writable):after {
+    position: absolute;
+    width: 40%;
+    height: 10px;
+    content: " ";
+    left: 6px;
+    bottom: 6px;
+    background: transparent;
+    -webkit-transform: skew(-10deg) rotate(-10deg);
+    -moz-transform: skew(-10deg) rotate(-10deg);
+    transform: skew(-10deg) rotate(-10deg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    z-index: -1;
+  }
+  .stickie-note:not(.writable):after {
+    left: auto;
+    right: 6px;
+    -webkit-transform: skew(10deg) rotate(10deg);
+    -moz-transform: skew(10deg) rotate(10deg);
+    transform: skew(10deg) rotate(10deg);
+  }
+
+  .stickie-note p {
+    padding: 0;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .stickie-note p.note {
+    font-family: "Indie Flower", cursive;
+    font-size: 1em;
+    line-height: 1.5em;
+    height: 150px;
+    text-align: left;
+  }
+
+  @media (max-width: 30em) {
+    .stickie-note p.note {
+      font-size: 1.1em;
+
+      line-height: 1.3em;
+      height: 150px;
+    }
+  }
+
+  .stickie-note p.username {
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  .stickie-note.yellow,
+  #userList li.yellow {
+    background: #fdfdaa; /*f8f894*/
+  }
+  .stickie-note.pink,
+  #userList li.pink {
+    background: #f0c3da;
+  }
+  .stickie-note.green,
+  #userList li.green {
+    background: #baf7bd;
+  }
+  .stickie-note.blue,
+  #userList li.blue {
+    background: #b8cdec;
+  }
+  .stickie-note.purple,
+  #userList li.purple {
+    background: #d6bedc;
+  }
+
+  #stickiesList {
+    overflow: hidden;
+  }
+  #stickiesList li {
+    list-style: none;
+    margin: 1em;
+    display: inline-block;
+  }
+  /* making them more whimsical */
+  #stickiesList li:nth-child(odd) .stickieWrapper {
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+  #stickiesList li:nth-child(even) .stickieWrapper {
+    -webkit-transform: rotate(-2deg) translateY(10px);
+    -moz-transform: rotate(-2deg) translateY(10px);
+    transform: rotate(-2deg) translateY(10px);
+  }
+  #stickiesList li:nth-child(3n) .stickieWrapper {
+    -webkit-transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+    transform: rotate(6deg);
+  }
+  #stickiesList li:nth-child(7n) .stickieWrapper {
+    -webkit-transform: rotate(-8deg) translateY(5px);
+    -moz-transform: rotate(-8deg) translateY(5px);
+    transform: rotate(-8deg) translateY(5px);
+  }
+
+  /*hover state for post-its*/
+  #stickiesList li .stickieWrapper:hover {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: 80ms;
+  }
+
+  /*#stickiesList li:nth-child(odd) .stickieWrapper:hover {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  #stickiesList li:nth-child(even) .stickieWrapper:hover {
+    -webkit-transform: rotate(0deg) translateY(0px);;
+    -moz-transform: rotate(0deg) translateY(0px);;
+    transform: rotate(0deg) translateY(0px);
+  }
+  #stickiesList li:nth-child(3n) .stickieWrapper:hover {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  #stickiesList li:nth-child(7n) .stickieWrapper:hover {
+    -webkit-transform: rotate(0deg) translateY(0px);
+    -moz-transform: rotate(0deg) translateY(0px);
+    transform: rotate(0deg) translateY(0px);
+  } */
+
+  .downloads div {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .downloads__icon {
+    background-color: #fff;
+    color: #000;
+  }
+
+  @media (max-width: 799px) {
+    .o-grid--2up .o-grid__item {
+      width: 100%;
+    }
+    #poem-form {
+      max-width: 250px;
+      margin: auto;
+    }
+  }
+
+  @media (min-width: 50em) {
+    #about .page-intro {
+      font-size: 1.4rem;
+    }
+
+    #join.ms-hero--deep {
+      min-height: 625px;
+    }
+  }
+
+  /*@media only screen and (min-width: 856px) {*/
+  .stickie-note {
+    background: #ffa;
+    position: relative;
+    display: block;
+    height: 250px;
+    width: 250px;
+    padding: 10px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3),
+      inset 0 0 24px rgba(0, 0, 0, 0.2);
+  }
+  .stickie-note p.note {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    height: 190px;
+  }
+
+  /*
+  }
+  */
+</style>
